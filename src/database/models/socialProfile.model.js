@@ -1,3 +1,4 @@
+import mongoose from 'mongoose'
 const socialProfileSchema = new mongoose.Schema({
     user_id: {
         type: mongoose.Schema.Types.ObjectId,
@@ -8,4 +9,7 @@ const socialProfileSchema = new mongoose.Schema({
     platform_user: { type: String, required: true },
 })
 
-export default mongoose.model('SocialProfile', socialProfileSchema)
+export const SocialProfile = mongoose.model(
+    'SocialProfile',
+    socialProfileSchema,
+)
