@@ -1,11 +1,11 @@
-import mongoose from "mongoose";
-import { logger } from "../utils/index.utils.js";
+import mongoose from 'mongoose'
+import { logger } from '../utils/index.utils.js'
 
 export const connectMongodb = async () => {
-  try {
-    await mongoose.connect(process.env.MONGO_URI);
-    logger.info("MONGODB CONNECTED!");
-  } catch (error) {
-    throw new Error(error);
-  }
-};
+    try {
+        await mongoose.connect(process.env.MONGO_URI)
+        logger.info('MONGODB CONNECTED!')
+    } catch (error) {
+        throw new Error(error)
+    }
+}
