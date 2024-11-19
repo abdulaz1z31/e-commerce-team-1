@@ -10,6 +10,8 @@ export const validationMiddleware = (schema) => {
             logger.error(`Validation error: ${errorMessages}`)
 
             return res.status(400).json({
+            logger.error(error.details.map((detail) => detail.message))
+            return res.status(statusCodes.BAD_REQUEST).json({
                 error: 'validationError',
                 details: error.details.map((detail) => detail.message),
             })

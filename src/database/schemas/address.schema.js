@@ -10,3 +10,4 @@ export const addressSchema = Joi.object({
     phone_number: Joi.string().pattern(/^[0-9]{10,15}$/),
     created_at: Joi.date().default(Date.now),
 })
+

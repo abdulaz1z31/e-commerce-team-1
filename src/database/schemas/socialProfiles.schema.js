@@ -4,3 +4,4 @@ export const socialProfileSchema = Joi.object({
     platform: Joi.string().max(50).required(),
     platform_user: Joi.string().max(100).required(),
 })
+

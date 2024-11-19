@@ -5,3 +5,4 @@ export const orderSchema = Joi.object({
     created_at: Joi.date().default(Date.now),
     updated_at: Joi.date().default(Date.now),
 })
+
