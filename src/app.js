@@ -24,7 +24,7 @@ app.use('/reviews', reviewsRouter)
 app.use('/carts', cartsRouter)
 app.use('/categories', categoriesRoutes)
 app.use('/product',  productRoutes)
-app.use('/carts', cartItemRouter)
+app.use('/cartItem', cartItemRouter)
 app.use((req, res) => {
     return res.status(404).send('NOT FOUND')
 })
