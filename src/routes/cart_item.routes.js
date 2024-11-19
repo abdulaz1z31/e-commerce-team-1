@@ -5,7 +5,7 @@ import {
     getAllCartItemController,
     getByIdCartItemController,
     updateCartItemController,
-} from '../controller/cart.item.controller.js'
+} from '../controller/index.controller.js'
 
 export const cartItemRouter = Router()
 

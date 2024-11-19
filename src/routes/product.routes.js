@@ -5,12 +5,12 @@ import {
     getAllProductController,
     getByIdProductController,
     updateProductController,
-} from '../controller/product.controller.js'
+} from '../controller/index.controller.js'
 
-export const cartItemRouter = Router()
+export const productRoutes = Router()
 
-cartItemRouter.get('/all', getAllProductController)
-cartItemRouter.get('/all/:id', getByIdProductController)
-cartItemRouter.post('/create', createProductController)
-cartItemRouter.put('/update/:id', updateProductController)
-cartItemRouter.delete('/delete/:id', deleteProductController)
+productRoutes.get('/all', getAllProductController)
+productRoutes.get('/all/:id', getByIdProductController)
+productRoutes.post('/create', createProductController)
+productRoutes.put('/update/:id', updateProductController)
+productRoutes.delete('/delete/:id', deleteProductController)
