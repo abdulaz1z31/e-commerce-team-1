@@ -1,3 +1,6 @@
+export * from "./categories.models.js"
+export * from "./product.models.js"
+export * from "./card_item.models.js"
 export * from './user.model.js'
 export * from './address.model.js'
 export * from './order.model.js'
