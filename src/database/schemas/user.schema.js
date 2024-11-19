@@ -13,8 +13,3 @@ export const userSchema = Joi.object({
         .optional(),
     is_active: Joi.boolean().default(false),
 })
-    birth_of_date: Joi.date(),
-    phone_number: Joi.string().pattern(/^[0-9]{10,15}$/),
-    is_active: Joi.boolean().default(false),
-})
-
