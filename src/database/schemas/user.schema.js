@@ -1,4 +1,4 @@
-import Joi from 'joi';
+import Joi from 'joi'
 
 const userSchema = Joi.object({
     name: Joi.string().min(3).max(50),
@@ -9,7 +9,7 @@ const userSchema = Joi.object({
     username: Joi.string().alphanum().min(3).max(30).required(),
     birth_of_date: Joi.date(),
     phone_number: Joi.string().pattern(/^[0-9]{10,15}$/),
-    is_active: Joi.boolean().default(false)
-});
+    is_active: Joi.boolean().default(false),
+})
 
-export default userSchema;
+export default userSchema
