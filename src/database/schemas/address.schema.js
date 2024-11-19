@@ -7,7 +7,7 @@ const addressSchema = Joi.object({
     city: Joi.string().max(50).required(),
     postal_code: Joi.string().max(20),
     phone_number: Joi.string().pattern(/^[0-9]{10,15}$/),
-    created_at: Joi.date().default(Date.now)
-});
+    created_at: Joi.date().default(Date.now),
+})
 
-export default addressSchema;
+export default addressSchema

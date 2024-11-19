@@ -1,7 +1,11 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose'
 
 const addressSchema = new mongoose.Schema({
-    user_id: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+    user_id: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true,
+    },
     title: { type: String },
     created_at: { type: Date, default: Date.now },
     address_line_1: { type: String, required: true },
@@ -9,7 +13,7 @@ const addressSchema = new mongoose.Schema({
     country: { type: String, required: true },
     city: { type: String, required: true },
     postal_code: { type: String },
-    phone_number: { type: String }
-});
+    phone_number: { type: String },
+})
 
-export default mongoose.model('Address', addressSchema);
+export default mongoose.model('Address', addressSchema)
