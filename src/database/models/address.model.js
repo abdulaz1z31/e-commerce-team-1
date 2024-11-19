@@ -16,4 +16,4 @@ const addressSchema = new mongoose.Schema({
     phone_number: { type: String },
 })
 
-export default mongoose.model('Address', addressSchema)
+export const Address = mongoose.model('Address', addressSchema)
