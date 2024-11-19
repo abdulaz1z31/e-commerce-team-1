@@ -1,6 +1,12 @@
 import express from 'express'
 import morgan from 'morgan'
-import { authRouter, userRouter } from './routes/index.routes.js'
+import {
+    authRouter,
+    userRouter,
+    cartsRouter,
+    wishlistsRouter,
+    reviewsRouter,
+} from './routes/index.routes.js'
 
 export const app = express()
 
@@ -10,6 +16,9 @@ app.use(morgan('dev'))
 
 app.use('/auth', authRouter)
 app.use('/user', userRouter)
+app.use('/wishlist', wishlistsRouter)
+app.use('/reviews', reviewsRouter)
+app.use('/carts', cartsRouter)
 
 app.use((req, res) => {
     return res.status(404).send('NOT FOUND')
