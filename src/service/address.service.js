@@ -1,7 +1,7 @@
-import { Reviews } from '../database/models/index.model.js'
-export const getAllReviewsService = async () => {
+import { Address } from '../database/models/index.model.js'
+export const getAllAddressesService = async () => {
     try {
-        const data = await Reviews.find()
+        const data = await Address.find()
         if (!data) {
             throw new Error('Reviews not found')
         }
@@ -10,9 +10,9 @@ export const getAllReviewsService = async () => {
         throw new Error(error)
     }
 }
-export const getReviewByIdService = async (id) => {
+export const getAddressByIdService = async (id) => {
     try {
-        const data = await Reviews.findById(id)
+        const data = await Address.findById(id)
         if (!data) {
             throw new Error('Reviews not found')
         }
@@ -21,31 +21,31 @@ export const getReviewByIdService = async (id) => {
         throw new Error(error)
     }
 }
-export const createReviewService = async (body) => {
+export const createAddressService = async (body) => {
     try {
-        const data = await Reviews.create(body)
+        const data = await Address.create(body)
         return data
     } catch (error) {
         throw new Error(error)
     }
 }
-export const updateReviewByIdService = async (id, body) => {
+export const updateAddressByIdService = async (id, body) => {
     try {
-        const data = await Reviews.findByIdAndUpdate(id, body, {
+        const data = await Address.findByIdAndUpdate(id, body, {
             new: true,
             runValidators: true,
         })
         if (!data) {
             throw new Error('Reviews not found or some issues update')
-        }
+        }SocialProfi
         return data
     } catch (error) {
         throw new Error(error)
     }
 }
-export const deleteReviewByIdService = async (id) => {
+export const deleteAddressByIdService = async (id) => {
     try {
-        const data = await Reviews.findByIdAndDelete(id)
+        const data = await Address.findByIdAndDelete(id)
         if (!data) {
             throw new Error('Reviews not found or some issues delete')
         }
