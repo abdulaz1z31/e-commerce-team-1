@@ -8,7 +8,10 @@ import {
     reviewsRouter,
     categoriesRoutes,
     productRoutes,
-    cartItemRouter
+    cartItemRouter,
+    ordersRouter,
+    socialProfilesRouter,
+    addressRouter,
 } from './routes/index.routes.js'
 
 export const app = express()
@@ -23,8 +26,11 @@ app.use('/wishlist', wishlistsRouter)
 app.use('/reviews', reviewsRouter)
 app.use('/carts', cartsRouter)
 app.use('/categories', categoriesRoutes)
-app.use('/product',  productRoutes)
+app.use('/product', productRoutes)
 app.use('/cartItem', cartItemRouter)
+app.use('/orders', ordersRouter)
+app.use('/socialProfiles', socialProfilesRouter)
+app.use('/address', addressRouter)
 app.use((req, res) => {
     return res.status(404).send('NOT FOUND')
 })

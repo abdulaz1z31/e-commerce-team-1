@@ -1,7 +1,7 @@
-import { Reviews } from '../database/models/index.model.js'
-export const getAllReviewsService = async () => {
+import { Order } from '../database/models/index.model.js'
+export const getAllOrdersService = async () => {
     try {
-        const data = await Reviews.find()
+        const data = await Order.find()
         if (!data) {
             throw new Error('Reviews not found')
         }
@@ -10,9 +10,9 @@ export const getAllReviewsService = async () => {
         throw new Error(error)
     }
 }
-export const getReviewByIdService = async (id) => {
+export const getOrderByIdService = async (id) => {
     try {
-        const data = await Reviews.findById(id)
+        const data = await Order.findById(id)
         if (!data) {
             throw new Error('Reviews not found')
         }
@@ -21,17 +21,17 @@ export const getReviewByIdService = async (id) => {
         throw new Error(error)
     }
 }
-export const createReviewService = async (body) => {
+export const createOrderService = async (body) => {
     try {
-        const data = await Reviews.create(body)
+        const data = await Order.create(body)
         return data
     } catch (error) {
         throw new Error(error)
     }
 }
-export const updateReviewByIdService = async (id, body) => {
+export const updateOrderByIdService = async (id, body) => {
     try {
-        const data = await Reviews.findByIdAndUpdate(id, body, {
+        const data = await Order.findByIdAndUpdate(id, body, {
             new: true,
             runValidators: true,
         })
@@ -43,9 +43,9 @@ export const updateReviewByIdService = async (id, body) => {
         throw new Error(error)
     }
 }
-export const deleteReviewByIdService = async (id) => {
+export const deleteOrderByIdService = async (id) => {
     try {
-        const data = await Reviews.findByIdAndDelete(id)
+        const data = await Order.findByIdAndDelete(id)
         if (!data) {
             throw new Error('Reviews not found or some issues delete')
         }
