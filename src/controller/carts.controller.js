@@ -23,7 +23,11 @@ export const getCartByIdController = async (req, res, next) => {
 }
 export const createCartController = async (req, res, next) => {
     try {
-        const data = await createCartsService(req.body)
+        const body  = req.body
+        const data = await createCartsService(body)
+        if (!data) {
+            return res.status(404).send('NOT FOUND')
+        }
         res.status(200).send(data)
     } catch (error) {
         next(error)

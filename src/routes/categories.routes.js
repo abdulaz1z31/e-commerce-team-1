@@ -10,7 +10,7 @@ import {
 export const categoriesRoutes = Router()
 
 categoriesRoutes.get('/all', getAllCategoriesController)
-categoriesRoutes.get('/all/:id', getByIdCategoriesController)
+categoriesRoutes.get('/all/:name', getByIdCategoriesController)
 categoriesRoutes.post('/create', createCategoriesController)
-categoriesRoutes.put('/update/:id', updateCategoriesController)
-categoriesRoutes.delete('/delete/:id', deleteCategoriesController)
+categoriesRoutes.put('/update/:name', updateCategoriesController)
+categoriesRoutes.delete('/delete/:name', deleteCategoriesController)

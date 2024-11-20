@@ -41,7 +41,7 @@ export const loginUserService = async (userData) => {
         }
 
         const passwordIsEqual = await currentUser.compare(password)
-        console.log(passwordIsEqual)
+        // console.log(passwordIsEqual)
 
         if (!passwordIsEqual) {
             throw new Error('Email or password is not valid')
@@ -116,7 +116,7 @@ export const forgetPasswordService = async (data) => {
             { user_id: currentUser._id },
             { otp_code: oneTimePassword },
         )
-        console.log(newp)
+        // console.log(newp)
 
         return { success: true, error: false }
     } catch (error) {

@@ -8,8 +8,6 @@ export const userSchema = Joi.object({
     avatar: Joi.string().uri().optional(),
     username: Joi.string().alphanum().min(3).max(30).required(),
     birth_of_date: Joi.date().optional(),
-    phone_number: Joi.string()
-        .pattern(/^[0-9]{10,15}$/)
-        .optional(),
+    phone_number: Joi.string().optional(),
     is_active: Joi.boolean().default(false),
 })

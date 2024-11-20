@@ -1,12 +1,17 @@
 import { Categories } from '../database/models/index.model.js'
 
 export const createCategoriesSercvice = async (name, data) => {
-    const result = await Categories.findOne({ name: name }, data)
-    if (!result) {
-        const newCategory = Categories.create(data)
-        return newCategory
+    try {
+        const result = await Categories.findOne({name})
+        if (!result) {
+            const newCategory = await Categories.create(data)
+            return newCategory
+        }
+        throw new Error('error')
+    } catch (error) {
+        throw new Error(`error, ${error.message}`)
+        
     }
-    throw new Error('error')
 }
 
 export const getAllCategoriesSercvice = async () => {
@@ -27,7 +32,7 @@ export const getByIdCategoriesSercvice = async (name) => {
 
 export const updateCategoriesSercvice = async (name, data) => {
     const updateCategories = await Categories.findOneAndUpdate(
-        { name: name },
+        { name},
         data,
     )
     if (!updateCategories) {
@@ -37,7 +42,7 @@ export const updateCategoriesSercvice = async (name, data) => {
 }
 
 export const deleteCategoriesSercvice = async (name) => {
-    const delCategories = await Categories.findOneAndDelete({name:name})
+    const delCategories = await Categories.findOneAndDelete({name })
     if (!delCategories) {
         throw new Error('Error...')
     }

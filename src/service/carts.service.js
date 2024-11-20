@@ -23,12 +23,14 @@ export const getByIdCartsService = async (id) => {
 }
 export const createCartsService = async (body) => {
     try {
-        const allData = await Carts.create(body)
-        return allData
+        
+        const allData = await Carts.create(body);
+        return allData;
     } catch (error) {
-        throw new Error(error)
+        throw new Error(error.message);
     }
-}
+};
+
 export const updateCartByIdService = async (id, body) => {
     try {
         const allData = await Carts.findByIdAndUpdate(id, body, {
