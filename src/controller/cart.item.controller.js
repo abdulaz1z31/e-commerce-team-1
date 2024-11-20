@@ -51,7 +51,7 @@ export const getByIdCartItemController = async (req, res, next) => {
 export const updateCartItemController = async (req, res, next) => {
     try {
         const title = req.params.title
-        const result = await updateCartItemSercvice(title)
+        const result = await updateCartItemSercvice(title, req.body)
         if (!result) {
             return res.status(400).send('NOT FOUND')
         }

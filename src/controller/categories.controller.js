@@ -51,7 +51,7 @@ export const getByIdCategoriesController = async (req, res, next) => {
 export const updateCategoriesController = async (req, res, next) => {
     try {
         const name = req.params.name
-        const result = await updateCategoriesSercvice(name)
+        const result = await updateCategoriesSercvice(name, req.body)
         if (!result) {
             return res.status(400).send('NOT FOUND')
         }
@@ -68,7 +68,7 @@ export const deleteCategoriesController = async (req, res, next) => {
         if (!result) {
             return res.status(400).send('NOT FOUND')
         }
-        return res.status(200).send({ result: result })
+        return res.status(200).send({ mal:"ochirildi",result: result })
     } catch (error) {
         next(error)
     }

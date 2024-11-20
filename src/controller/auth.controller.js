@@ -29,7 +29,7 @@ export const loginUser = async (req, res, next) => {
     try {
         const result = await loginUserService(req.body)
         const { success, error, token } = result
-        console.log(error)
+        // console.log(error)
 
         if (success) {
             logger.info('User logged in successfully')
@@ -82,7 +82,7 @@ export const forgetPassword = async (req, res, next) => {
         const { email } = req.body
         const result = await forgetPasswordService({ email })
         const { success, error } = result
-        console.log(result)
+        // console.log(result)
 
         if (success) {
             logger.info('Password reset link sent to email')

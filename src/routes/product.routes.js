@@ -10,7 +10,7 @@ import {
 export const productRoutes = Router()
 
 productRoutes.get('/all', getAllProductController)
-productRoutes.get('/all/:id', getByIdProductController)
+productRoutes.get('/all/:title', getByIdProductController)
 productRoutes.post('/create', createProductController)
-productRoutes.put('/update/:id', updateProductController)
-productRoutes.delete('/delete/:id', deleteProductController)
+productRoutes.put('/update/:title', updateProductController)
+productRoutes.delete('/delete/:title', deleteProductController)
