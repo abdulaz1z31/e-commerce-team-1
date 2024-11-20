@@ -15,3 +15,5 @@ userRouter.get('/user', checkTokens, roleGuard('admin'), getAllUsers)
 userRouter.get('/user/:id', checkTokens, roleGuard('admin'), getUserById)
 userRouter.put('/user/:id', checkTokens, roleGuard('admin'), updateUserById)
 userRouter.delete('/user/:id', checkTokens, roleGuard('admin'), deleteUserById)
+
+// menimcha getUserById da roleGuard kerakmas

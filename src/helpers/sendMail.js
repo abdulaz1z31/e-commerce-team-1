@@ -19,6 +19,7 @@ export const sendMail = async (to, subject, text) => {
         function (error, info) {
             if (error) {
                 console.log(error)
+// logger ishlatish kerak edi menimcha
             } else {
                 console.log('Email sent: ' + info.response)
             }
